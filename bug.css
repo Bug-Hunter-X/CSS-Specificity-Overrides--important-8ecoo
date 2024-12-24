@@ -1,0 +1,17 @@
+The following CSS code snippet exhibits an uncommon error related to specificity and inheritance:
+
+```css
+.parent {
+  color: blue;
+}
+
+.child {
+  color: red !important;
+}
+
+.parent .child {
+  color: green;
+}
+```
+
+In this scenario, the `.parent .child` selector has higher specificity than `.child`, overriding the `!important` declaration.  While `!important` typically has the highest precedence, specificity rules take precedence over it. The resulting text color would be green, not red. This is unexpected because `!important` is generally assumed to be the strongest.
