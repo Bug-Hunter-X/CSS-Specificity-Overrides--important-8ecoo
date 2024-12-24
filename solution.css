@@ -1,0 +1,25 @@
+The solution involves a restructuring of the CSS to avoid conflicts. Instead of relying on `!important`, leverage CSS specificity effectively. Here is the corrected code:
+
+```css
+.parent {
+  color: blue;
+}
+
+.child {
+  color: red;
+}
+
+.parent .child {
+  color: green;
+}
+
+/* Alternatively, if the red color is crucial, increase specificity of .child */
+.parent .child {
+  color: green; 
+}
+.parent .child.specific-child {
+  color: red; 
+}
+```
+
+By adjusting the selectors or using more specific rules, the expected styling behavior can be achieved without the use of `!important`.
